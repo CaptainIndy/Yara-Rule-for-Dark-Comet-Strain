@@ -85,6 +85,7 @@ Dark Comet Yara Rule
 
 <img width="564" alt="Screenshot 2024-03-22 at 11 01 32" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/a195571d-57f6-4c2d-a1ec-a61ef916021b">
 
+In this rule I set the following strings to always be true: the specific MZ header at the beginning of the file, the "&rat" string that is unique to RAT malware and the VM error string (which was too specific to be overlooked). As long as those strings existed and any of the other strings I listed existed, the rule would return the sample I was looking for.
 It is to be noted that this rule is written for a specific sample strain I found and I do not know if it would work to detect all Dark Comet malware. But for this specific strain, it does work. I downloaded over 100 samples of Malware and put them into a folder. 
 
 Here are the samples:
