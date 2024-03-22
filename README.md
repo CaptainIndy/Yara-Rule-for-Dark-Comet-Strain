@@ -59,31 +59,35 @@ Furthermore, I decided to upload the malware to Anyrun, a malware analysis platf
 
 <img width="788" alt="Screenshot 2024-03-22 at 09 57 34" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/46ac6beb-e06d-4bbc-bafa-1fa2a1aecf54">
 
-Here this sceenshot from our AnyRun report shows three different categories divided up into Malicious, Suspicious, and Info. It shows the activity. For a further deep dive to better understand how this malware runs on a system, here is the link below: 
+Here this sceenshot from our AnyRun report shows three different categories divided up into Malicious, Suspicious, and Info. In addition, AnyRun has a built in ChatGPT feature that gives a descriptive breakdown of each of the processes that takes place during the execution of the malware. For a further deep dive to better understand how this malware runs on a system, here is the link below:
 https://app.any.run/tasks/1e9fe3d9-5fb5-4fc0-a0fd-b9828813a8d8?_gl=1*vzls8t*_gcl_au*MTY0MTczMzUwOC4xNzEwMTE1NDg2*_ga*NDg2Mjc1MTYyLjE3MTAxMTU0ODY.*_ga_53KB74YDZR*MTcxMDI5MTEzNy40LjEuMTcxMDI5MTI5MS4wLjAuMA../
 
-In addition, AnyRun has a built in ChatGPT feature that gives a descriptive breakdown of each of the processes that takes place during the execution of the malware. The screenshots are below in order.
+Step 4: Rule Writing
 
-<img width="1008" alt="Screenshot 2024-03-22 at 10 26 22" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/1a08a291-eeb1-4612-854c-a06e72d96a2b">
-General Report
+The next step I took was to look for unique strings in the malware. 
+I used the following command to get a numeric count of unique long strings: strings -el -a * |sort |uniq -c | sort -nr | less
 
-<img width="1023" alt="Screenshot 2024-03-22 at 10 26 47" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/43c7cd5c-e017-449c-8257-0789ae264274">
-Files Modification
+The strings I got back that I chose to use with my rule were the following:
+"Contact info@oreans.com for this error"
+"StartService API Error while extraction the driver"
+"Software\WinLicense"
+"OpenSCManager API Error while extraction the driver"
+"Sorry, this application cannot run under a Virtual Machine"
+"APIC error: Cannot find Processors Control Blocks. Please,"
+“&rat” 
 
-<img width="1030" alt="Screenshot 2024-03-22 at 10 27 02" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/eba243c6-f043-4293-a82d-4dd5045af219">
-Registry Changes
+From research into malicious Windows files, I found that samples start with hexadecimal bytes "4D 5A" to indicate the file is a Portable Executable (PE). This signature is found at the beginning of all PE files and indicates the start of the PE header.
 
-<img width="1009" alt="Screenshot 2024-03-22 at 10 28 04" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/1650a2e5-acf7-4467-bebd-791d14858f49">
-Synchronization #1 (Hook Switch)
+I also knew that Dark Comet is a RAT (Remote Access Trojan). I found the "&rat" string even though it was hidden by the "&" symbol. From here I was able to put together the strings I knew I wanted into my first Yara Rule. 
 
-<img width="1014" alt="Screenshot 2024-03-22 at 10 28 50" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/31d183e0-41ca-4651-86de-b2fc7d4ccb3d">
-Synchronization #2 (Mutex CLR Peformance Monitor)
+Dark Comet Yara Rule
+<img width="564" alt="Screenshot 2024-03-22 at 11 01 32" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/a195571d-57f6-4c2d-a1ec-a61ef916021b">
 
-<img width="1027" alt="Screenshot 2024-03-22 at 10 30 54" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/fedf67d9-ef77-437e-b400-79a2208b4163">
-Synchronization #3 (debugging mutex)
+It is to be noted that this rule is written for a specific sample strain I found and I do not know if it would work to detect all Dark Comet malware. But for this specific strain, it does work. I downloaded over 100 samples of Malware and put them into a folder. I ran the following command:
 
-<img width="1025" alt="Screenshot 2024-03-22 at 10 32 02" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/76cf8de2-75da-4b04-bce3-1ddd86fc7b43">
-Synchronization #4 (CLR Peformance Runtime)
+
+
+
 
 
 
