@@ -47,11 +47,19 @@ Step 2: I went to Malware Bazaar and found an old strain of Malware. I wanted so
 
 On Malware Bazaar, you can see the the strain has a specific SHA-256 hash that makes the malware easily identifiable for later reference. In the second photo you can see that there is more information like when was it first seen, the file type (executable), other specific hash identifiers, other similar malware samples, and the reporter Abuse_ch who is well known in the cybersecurity community for providing malware analyzing services. 
 
-Step 3: Further Analysis on Virus Total and Anyrun
+Step 3: Further Analysis on Virus Total and Anyrun.
+
 I decided to dive a bit deeper and look on Virus Total for more information. I dropped the malware onto the website and received more specific information. 
 
 <img width="493" alt="Screenshot 2024-03-21 at 16 24 25" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/877a8336-25ba-4207-95c5-a1ff9715801b">
 
 Here we can see it is a Windows32 Portable Executable. Also we can see that our malware has been protected or obfuscated using the Themida Software protection tool. Themida is a commercial software protection and licensing tool used by developers to protect their application against reverse engineering, cracking, and unauthorized use. When a file is protected with Themida, it undergoes various transformations and obfuscations to make it more difficult for attackers to analyze or modify protected code. This is done through encryption, added anti-debugging and anti-reverse engineering techniques, and modifying the structure of the executable to thwart analysis. This obviously raises some flags in our case and will require the use or reverse engineering tools such as Ghidra, Binary Ninja, or Cuttr to dissect this malware. But for the scope and practice of simply creating a rule for my first time, I will keep it simple and save that for a later date. 
 
-Furthermore, I decided to upload the malware to Anyrun, a malware analysis platform that allows users to execute and analyze malware samples in a controlled environment. It provides a sandboxed environment where malware can be run safely to observe its behavior such as file modifications, network activity, and process interactions. 
+Furthermore, I decided to upload the malware to Anyrun, a malware analysis platform that allows users to execute and analyze malware samples in a controlled environment. It provides a sandboxed environment where malware can be run safely to observe its behavior such as file modifications, network activity, and process interactions, without risking the host system. 
+
+<img width="788" alt="Screenshot 2024-03-22 at 09 57 34" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/46ac6beb-e06d-4bbc-bafa-1fa2a1aecf54">
+
+Here this sceenshot from our AnyRun report shows three different categories divided up into Malicious, Suspicious, and Info. It shows the activity. For a further deep dive to better understand how this malware runs on a system, here is the link below: 
+https://app.any.run/tasks/1e9fe3d9-5fb5-4fc0-a0fd-b9828813a8d8?_gl=1*vzls8t*_gcl_au*MTY0MTczMzUwOC4xNzEwMTE1NDg2*_ga*NDg2Mjc1MTYyLjE3MTAxMTU0ODY.*_ga_53KB74YDZR*MTcxMDI5MTEzNy40LjEuMTcxMDI5MTI5MS4wLjAuMA../
+
+
