@@ -68,6 +68,7 @@ The next step I took was to look for unique strings in the malware.
 I used the following command to get a numeric count of unique long strings: strings -el -a * |sort |uniq -c | sort -nr | less
 
 The strings I got back that I chose to use with my rule were the following:
+
 "Contact info@oreans.com for this error"
 "StartService API Error while extraction the driver"
 "Software\WinLicense"
@@ -81,6 +82,7 @@ From research into malicious Windows files, I found that samples start with hexa
 I also knew that Dark Comet is a RAT (Remote Access Trojan). I found the "&rat" string even though it was hidden by the "&" symbol. From here I was able to put together the strings I knew I wanted into my first Yara Rule. 
 
 Dark Comet Yara Rule
+
 <img width="564" alt="Screenshot 2024-03-22 at 11 01 32" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/a195571d-57f6-4c2d-a1ec-a61ef916021b">
 
 It is to be noted that this rule is written for a specific sample strain I found and I do not know if it would work to detect all Dark Comet malware. But for this specific strain, it does work. I downloaded over 100 samples of Malware and put them into a folder. I ran the following command:
