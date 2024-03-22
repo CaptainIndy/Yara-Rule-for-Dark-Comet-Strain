@@ -99,7 +99,7 @@ Here is the results I got:
 
 <img width="804" alt="Screenshot 2024-03-22 at 14 31 52" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/4c4427f9-34af-4ed6-9df3-b9be3f593583">
 
-
+As you can see, the results for the Dark Comet strain returned as I planned. 
 
 
 
