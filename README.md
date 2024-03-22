@@ -105,6 +105,6 @@ Here is the results I got:
 
 
 
-<img width="415" alt="Screenshot 2024-03-22 at 14 31 25" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/c42106e0-8574-45e2-96df-784538f4e960">
+
 
 
