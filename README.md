@@ -62,4 +62,32 @@ Furthermore, I decided to upload the malware to Anyrun, a malware analysis platf
 Here this sceenshot from our AnyRun report shows three different categories divided up into Malicious, Suspicious, and Info. It shows the activity. For a further deep dive to better understand how this malware runs on a system, here is the link below: 
 https://app.any.run/tasks/1e9fe3d9-5fb5-4fc0-a0fd-b9828813a8d8?_gl=1*vzls8t*_gcl_au*MTY0MTczMzUwOC4xNzEwMTE1NDg2*_ga*NDg2Mjc1MTYyLjE3MTAxMTU0ODY.*_ga_53KB74YDZR*MTcxMDI5MTEzNy40LjEuMTcxMDI5MTI5MS4wLjAuMA../
 
+In addition, AnyRun has a built in ChatGPT feature that gives a descriptive breakdown of each of the processes that takes place during the execution of the malware. The screenshots are below in order.
+
+<img width="1008" alt="Screenshot 2024-03-22 at 10 26 22" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/1a08a291-eeb1-4612-854c-a06e72d96a2b">
+General Report
+
+<img width="1023" alt="Screenshot 2024-03-22 at 10 26 47" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/43c7cd5c-e017-449c-8257-0789ae264274">
+Files Modification
+
+<img width="1030" alt="Screenshot 2024-03-22 at 10 27 02" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/eba243c6-f043-4293-a82d-4dd5045af219">
+Registry Changes
+
+<img width="1009" alt="Screenshot 2024-03-22 at 10 28 04" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/1650a2e5-acf7-4467-bebd-791d14858f49">
+Synchronization #1 (Hook Switch)
+
+<img width="1014" alt="Screenshot 2024-03-22 at 10 28 50" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/31d183e0-41ca-4651-86de-b2fc7d4ccb3d">
+Synchronization #2 (Mutex CLR Peformance Monitor)
+
+<img width="1027" alt="Screenshot 2024-03-22 at 10 30 54" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/fedf67d9-ef77-437e-b400-79a2208b4163">
+Synchronization #3 (debugging mutex)
+
+<img width="1025" alt="Screenshot 2024-03-22 at 10 32 02" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/76cf8de2-75da-4b04-bce3-1ddd86fc7b43">
+Synchronization #4 (CLR Peformance Runtime)
+
+
+
+
+
+
 
