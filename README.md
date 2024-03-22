@@ -85,7 +85,19 @@ Dark Comet Yara Rule
 
 <img width="564" alt="Screenshot 2024-03-22 at 11 01 32" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/a195571d-57f6-4c2d-a1ec-a61ef916021b">
 
-It is to be noted that this rule is written for a specific sample strain I found and I do not know if it would work to detect all Dark Comet malware. But for this specific strain, it does work. I downloaded over 100 samples of Malware and put them into a folder. I ran the following command:
+It is to be noted that this rule is written for a specific sample strain I found and I do not know if it would work to detect all Dark Comet malware. But for this specific strain, it does work. I downloaded over 100 samples of Malware and put them into a folder. 
+
+Here are the samples:
+
+<img width="869" alt="Screenshot 2024-03-22 at 14 26 17" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/aec164ed-2d98-4b80-b926-e46f2a46d2ec">
+
+In addition, I do not remember which file contained the Dark Comet RAT strain. This is the command I ran. 
+
+<img width="415" alt="Screenshot 2024-03-22 at 14 31 25" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/c922ad2d-0374-4016-874f-a57fc5a41a94">
+
+Here is the results I got:
+
+<img width="804" alt="Screenshot 2024-03-22 at 14 31 52" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/4c4427f9-34af-4ed6-9df3-b9be3f593583">
 
 
 
@@ -93,7 +105,6 @@ It is to be noted that this rule is written for a specific sample strain I found
 
 
 
-
-
+<img width="415" alt="Screenshot 2024-03-22 at 14 31 25" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/c42106e0-8574-45e2-96df-784538f4e960">
 
 
