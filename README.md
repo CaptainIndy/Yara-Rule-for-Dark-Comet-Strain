@@ -39,7 +39,7 @@ Downloading Yara:
 
 Step 1: The first thing I did was go into a VM and downloaded Yara. You can use any Linux, Windows, or any system you choose. Just make sure you can download YARA onto your machine. 
 
-Step 2: I went to Malware Bazaar and found an old strain of Malware. I wanted something that was a few years old and not as advanced and recent. I stumbled upon the Dark Comet malware family after asking ChatGPT what YARA rule I should write my first rule for. After searching for the Dark Comet family in the search box and finding a random strain a few years old, I downloaded it onto my VM. It downloads as a zip file that is password protected (the password being "infected"). 
+Step 2: I went to Malware Bazaar and found an old strain of Malware. I wanted something that was a few years old and not as advanced and recent. I stumbled upon the Dark Comet malware family after asking ChatGPT what YARA rule I should write for my first rule. After searching for the Dark Comet family in the search box and finding a random strain a few years old, I downloaded it onto my VM. It downloads as a zip file that is password protected (the password being "infected"). 
 
 <img width="375" alt="Screenshot 2024-03-21 at 16 13 50" src="https://github.com/CaptainIndy/Yara-Rule-for-Dark-Comet-Strain/assets/142528700/f0119e73-250b-41cc-9017-db9b0e516a17">
 
